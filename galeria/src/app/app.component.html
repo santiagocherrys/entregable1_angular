@@ -1,1 +1,30 @@
 <h1 class="text-center mt-3">Hola Mundo</h1>
+
+<label for="dropdown">Escoga una opcion</label>
+<select #opcion  (change)="onOptionChange(opcion.value)">
+  <option value="todo">Mostrar todo</option>
+  <option value="dado">dado</option>
+  <option value="dado2">dado2</option>
+</select>
+
+
+<!-- Muestra todo en caso de que sea mostrar todo -->
+<div *ngFor="let imagen of imagenes">
+  <div *ngIf="'todo' == seleccion">
+    <img [src]="'../assets/img/' + imagen.imagen + '.png'" alt="{{ imagen.titulo }}" class="img-dice" [id]="imagen.id">
+    <p class="fw-bold">{{imagen.titulo}}</p>
+    <p>{{ imagen.descripcion }}</p>
+    <button (click)="showId(imagen.id)">Show ID</button>
+  </div>
+  
+</div>
+
+<div *ngFor="let imagen of imagenes">
+  <div *ngIf="imagen.category == seleccion">
+    <img [src]="'../assets/img/' + imagen.imagen + '.png'" alt="{{ imagen.titulo }}" class="img-dice" [id]="imagen.id">
+    <p class="fw-bold">{{imagen.titulo}}</p>
+    <p>{{ imagen.descripcion }}</p>
+    <button (click)="showId(imagen.id)">Show ID</button>
+  </div>
+  
+</div>

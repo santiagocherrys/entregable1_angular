@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.img-dice {
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    background: red;
+    border-radius: 10px;
+    overflow: hidden;
+  }
